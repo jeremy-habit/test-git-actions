@@ -1,5 +1,3 @@
-function test(str) {
+module.exports = (str) => {
     return `💩${str}💩`;
 };
-
-test("coucou");

@@ -1,5 +1,5 @@
 {
-  "name": "@jeremy-habit/test-git-actions",
+  "name": "test-git-actions",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/jeremy-habit/test-git-actions.git"
   },
-  "author": "",
+  "author": "jey",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/jeremy-habit/test-git-actions/issues"

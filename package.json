@@ -1,0 +1,19 @@
+{
+  "name": "test-git-actions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeremy-habit/test-git-actions.git"
+  },
+  "author": "J",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeremy-habit/test-git-actions/issues"
+  },
+  "homepage": "https://github.com/jeremy-habit/test-git-actions#readme"
+}

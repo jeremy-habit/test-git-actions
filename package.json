@@ -1,5 +1,5 @@
 {
-  "name": "test-git-actionsexportmodule",
+  "name": "test-automate-publish",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/jeremy-habit/test-git-actions.git"
   },
-  "author": "jey",
+  "author": "J",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/jeremy-habit/test-git-actions/issues"

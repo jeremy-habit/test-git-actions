@@ -4,22 +4,19 @@ on:
     branches:
       - master
 jobs:
-  npm-publish:
+  build:
     name: npm-publish
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/[email protected]
+        uses: actions/checkout@v1
       - name: Set up Node.js
-        uses: actions/[email protected]
+        uses: actions/setup-node@v1
         with:
-          node-version: 10.0.0
-      - name: Publish if version has been updated
-        uses: pascalgn/[email protected]
-        with: # All of theses inputs are optional
-          tag_name: "%s"
-          tag_message: "%s"
-          commit_pattern: "^Release (\\S+)"
+          node-version: 12
+          registry-url: https://registry.npmjs.org/
+      - run: npm install
+      - run: npm publish
         env: # More info about the environment variables in the README
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this as is, it's automatically generated
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }} # You need to set this in your repo settings

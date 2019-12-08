@@ -10,6 +10,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v1
+      - run: git tag testTag
+      - run: git push origin testTag
       - name: Set up Node.js
         uses: actions/setup-node@v1
         with:

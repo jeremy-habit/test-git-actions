@@ -10,10 +10,10 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v1
-      - run: git tag testTag
-      - run: git push origin testTag
-        env: # More info about the environment variables in the README
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this as is, it's automatically generated
+      - name: Bump version and push tag
+        uses: anothrNick/github-tag-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Set up Node.js
         uses: actions/setup-node@v1
         with:

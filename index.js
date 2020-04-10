@@ -1,3 +1,3 @@
 module.exports = (str) => {
-    return `💩ccc${str}💩`;
+    return `💩cc${str}💩`;
 };

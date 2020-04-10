@@ -22,6 +22,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           registry-url: http://npm-proxy.preprod.upply.com
       - run: npm install
+      - run: npm pack
       - run: npm publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # it's automatically generated

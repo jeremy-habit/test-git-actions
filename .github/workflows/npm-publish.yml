@@ -1,26 +1,29 @@
-name: npm-publish
+name: auto-publish-api-types
 on:
   push:
     branches:
       - master
 jobs:
   build:
-    name: npm-publish
+    name: bump-version/push-tag/npm-publish
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.16.1]
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v1
-      - name: Bump version and push tag
+        uses: actions/checkout@v2
+      - name: Push tag
         uses: anothrNick/github-tag-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Set up Node.js
+      - name: Set up Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
-          node-version: 12
+          node-version: ${{ matrix.node-version }}
           registry-url: http://npm-proxy.preprod.upply.com
       - run: npm install
       - run: npm publish
-        env: # More info about the environment variables in the README
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this as is, it's automatically generated
-          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }} # You need to set this in your repo settings
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # it's automatically generated
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }} # Set in the repo settings

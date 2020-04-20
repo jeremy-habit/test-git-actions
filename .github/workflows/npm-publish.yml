@@ -21,7 +21,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           registry-url: http://npm-proxy.preprod.upply.com
-      - run: npm install
       - run: npm pack
       - run: npm publish
         env:
